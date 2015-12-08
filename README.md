@@ -76,7 +76,7 @@ A _semantic hostname_ is broken down into two or more labels, separated by perio
 
 The third label, _Image Data_, is not covered here as it is very specific to individual implementations.
 
-The RFC states the entire name must be no more than 253 octets, and each period-separated label should be no more than 63 octets. Underscores are not allowed.
+The RFC states the entire name must be no more than 253 octets, and each period-separated label should be no more than 63 octets. Underscores are not allowed. Each part of the label is hyphenated to split into meaningful slugs.
 
 ### First label: Business Value
 
@@ -99,20 +99,20 @@ _Optional_. This allows you to have a sweeping boolean between production and yo
 ### Second label: Infrastructure
 
 #####`os`
-**Required**. The operating system of the device.
+**Required**. The operating system of the device. You should use the major version release number as the last part of this, i.e. `rhel6` for Red Hat 6, `win10` for Windows, `osx10` for a Macbook, etc.
 
 #####`hosting provider`
 **Required**. If you host your own servers, this should be the team name, i.e. `ops`. You need to know who to ring if there's a problem.
 
 #####`device type`
-**Required**. Short code for the device: `sp` for smartphone, `vm` or `vrt` for virtual machine, `lb` for load balancer, and so on.
+_Optional_, but recommended. Short code for the device: `sp` for smartphone, `vm` or `vrt` for virtual machine, `lb` for load balancer, and so on.
 
 
 #####`locale`
 _Optional_.  A region-specific slug, i.e. `lon` for London, UK.
 
 #####`region`
-**Required**. The region the device is in. If it's a mobile device, the country of issue. 
+**Required**. The region the device is in. If it's a mobile device, the country of issue.
 
 
 ## Semantic hostnames and FQDNs
@@ -120,6 +120,26 @@ _Optional_.  A region-specific slug, i.e. `lon` for London, UK.
 Semantic hostnames and [Fully Qualified Domain Names (FQDNs)][wikipedia_fqdn] don't have to be mutually exclusive. As previously mentioned, decoupling hostnames from domains is advantageous, but if you wish to make your hostname both _semantic_ and _fully qualified_, then they can both co-exist:
 
 `acme-pipe-uat-nginx01.cen6-rs-vm-lon-uk.somedomain.com`
+
+## Specification by example
+
+A host running as part of a DB cluster, (second machine of 5) in UAT for the Wibble project. The server is running Red Hat 6 and is hosted by AWS in their US East 1 region.
+
+`wibble-pipe-uat-dbcluster02.rhel6-aws-vm-us-east-1`
+
+The same machine, but the team does not wish to use the `tier` slug:
+
+`wibble-uat-dbcluster02.rhel6-aws-vm-us-east-1`
+
+
+A single live host running a microservice for Single Sign On for Cool Startup. The machine is running Ubuntu 14x on Digital Ocean in their London environment:
+
+`cs-prod-sso01.ub14-do-vm-lon-uk`
+
+
+## The main thing to remember
+
+Be consistent. The convention above may not be ideal for you, but if you choose to change order of label parts, make sure you do it throughout. Don't have some servers following one naming convention and another following another unless you can guarantee you will never need to look through any sort of list or search containing _both_.
 
 [wikipedia_hostname]: https://en.wikipedia.org/wiki/Hostname "Article regarding hostnames on Wikipedia"
 [rfc952]: https://www.ietf.org/rfc/rfc952.txt "IETF RFC 952" 
