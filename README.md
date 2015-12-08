@@ -23,7 +23,7 @@ There is also the question of _domain_ itself. Are Cloud servers on [Amazon AWS]
 
 The concept of semantic hostnames is inspired by a [blog post][sd_blog] by [Server Density][server_density], although the naming convention in the article again follows the concept of _domain_. Domain names can, and should, be decoupled from hostnames. Domains may change, but your hostname should be for the life of the device.
 
-The aim is to have a naming convention that:
+The aim is to have a naming convention that is:
 
 - Easily searched. Whether just throwing names in a spreadsheet, grepping logs or files, or full blown Elastisearch, having a convention that exposes key information about the host from the name alone is useful.
 - Still useful at the terminal. As most terminals will chop to the first period, it's useful to have meaningful data at the command line.
