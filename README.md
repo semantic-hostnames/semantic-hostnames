@@ -48,7 +48,7 @@ While the above tell me _something_ about the environment I'm logged into, I wou
 
 ## Are names still relevant?
 
-As more and more developers move to cloud infrastructure, asset management is moving away from individual hosts. Autodiscovery, tags and regions are becoming more important than naming any one server. Nevertheless, individual servers are still important at the SME level, to institutions migrating from bare tin, or spread across providers.
+As more and more developers move to cloud infrastructure, asset management is moving away from individual hosts. Autodiscovery, tags and regions are becoming more important than naming any one server. Nevertheless, individual servers are still important at the SME level, to institutions migrating from bare tin, or spread across providers. Human legibility is still important; being able to identify a host from a casual glance at a screen is useful, even in a world where you may abstract that away.
 
 While no longer the canonical source it once was, naming something - or rather, branding cattle in your herds - is still useful, and co-exists with autodiscovery. While everybody wants to move to a point where they never have to SSH into a box to figure out what's going on, the reality for many is not yet inline with the ideal. To use an oft-quoted adage, _"In theory, theory and practice are the same. In practice, they are not"_.
 
