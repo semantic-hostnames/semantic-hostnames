@@ -21,7 +21,7 @@ There is also the question of _domain_ itself. Are Cloud servers on [Amazon AWS]
 
 ## Making Hostnames Have Modern Meaning 
 
-The concept of semantic hostnames is inspired by a [blog post][sd_blog] by [Server Density][server_density], although the naming convention in the article again follows the concept of _domain_. Domain names can, and should, be decoupled from hostnames.
+The concept of semantic hostnames is inspired by a [blog post][sd_blog] by [Server Density][server_density], although the naming convention in the article again follows the concept of _domain_. Domain names can, and should, be decoupled from hostnames. Domains may change, but your hostname should be for the life of the device.
 
 The aim is to have a naming convention that:
 
@@ -81,7 +81,7 @@ The RFC states the entire name must be no more than 253 octets, and each period-
 ### First label: Business Value
 
 #####`group`
-**Required**. This may be a project, a company name, a client, or a domain. 
+**Required**. This may be a project, a company name, a client, or a domain, though I recommend against the latter. 
 
 #####`tier`
 _Optional_. This allows you to have a sweeping boolean between production and your pipeline. You may have many different non-production environments: UAT, QA, OAT, beta, demo and so forth. Rather than create searches on all of these, a flag of `pipeline` or `pipe` can help. If you prefer to skip this, you can use inverse searching with `env != 'prod'` 
