@@ -83,7 +83,7 @@ _Optional_. This allows you to have a sweeping boolean between production and yo
 **Required**. If you host your own servers, this should be the team name, i.e. `ops`. You need to know who to ring if there's a problem.
 
 #####`device type`
-** Required **. Short code for the device: `sp` for smartphone, `vm` or `vrt` for virtual machine, `lb` for load balancer, and so on.
+**Required**. Short code for the device: `sp` for smartphone, `vm` or `vrt` for virtual machine, `lb` for load balancer, and so on.
 
 
 #####`locale`
