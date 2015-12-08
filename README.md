@@ -41,7 +41,7 @@ Well, assuming the context of, say, a digital agency, this server is for our `Ac
 
 At the terminal, we'll see (assuming using [oh-my-zsh][ohmyzsh] with "bira" theme):
 
-```
+```bash
 ╭─root@acme-pipe-uat-nginx01  ~/semantic-hostnames
 ╰─$
 ```
