@@ -1,4 +1,4 @@
-# Convention for Semantic Hostnames (CSH)
+# Convention for Semantic Hostnames (CSH) [![GitHub Stars](https://img.shields.io/github/stars/semantic-hostnames/semantic-hostnames.svg)][stargazers]
 
 ## Overview
 
@@ -161,3 +161,4 @@ The Convention for Semantic Hostnames was created by [shrikeh][shrikeh] after wo
 [wikipedia_fqdn]: https://en.wikipedia.org/wiki/Fully_qualified_domain_name "FQDN description on Wikipedia"
 [shrikeh]: https://github.com/shrikeh "My GitHub profile"
 [twitter]: https://twitter.com/barney_hanlon "My Twitter page"
+[stargazers]: https://github.com/semantic-hostnames/semantic-hostnames/stargazers "Stargazers on GitHub"
