@@ -21,7 +21,7 @@ There is also the question of _domain_ itself. Are Cloud servers on [Amazon AWS]
 
 ## Making Hostnames Have Modern Meaning 
 
-The concept of semantic hostnames inspired by a [blog post][sd_blog] by [Server Density][server_density], although the naming convention in the article again follows the concept of _domain_. Domain names can, and should, be decoupled from hostnames.
+The concept of semantic hostnames is inspired by a [blog post][sd_blog] by [Server Density][server_density], although the naming convention in the article again follows the concept of _domain_. Domain names can, and should, be decoupled from hostnames.
 
 The aim is to have a naming convention that:
 
