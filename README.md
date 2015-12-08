@@ -1,4 +1,4 @@
-# Semantic Hostnames
+# Convention for Semantic Hostnames (CSH)
 
 ## Overview
 
@@ -141,6 +141,10 @@ A single live host running a microservice for Single Sign On for Cool Startup. T
 
 Be consistent. The convention above may not be ideal for you, but if you choose to change order of label parts, make sure you do it throughout. Don't have some servers following one naming convention and another following another unless you can guarantee you will never need to look through any sort of list or search containing _both_.
 
+## The Author
+
+The Convention for Semantic Hostnames was created by [shrikeh][shrikeh] after working for years trying to normalise naming of a herd of different servers with different operating systems for different clients, projects, and roles. Tell me what you think of it on [Twitter][twitter].
+
 [wikipedia_hostname]: https://en.wikipedia.org/wiki/Hostname "Article regarding hostnames on Wikipedia"
 [rfc952]: https://www.ietf.org/rfc/rfc952.txt "IETF RFC 952" 
 [rfc1123]: https://www.ietf.org/rfc/rfc1123.txt "IETF RFC 1123"
@@ -155,3 +159,5 @@ Be consistent. The convention above may not be ideal for you, but if you choose 
 [aws]: https://aws.amazon.com/ "Amazon AWS homepage"
 [digital_ocean]: https://www.digitalocean.com "Digital Ocean homepage"
 [wikipedia_fqdn]: https://en.wikipedia.org/wiki/Fully_qualified_domain_name "FQDN description on Wikipedia"
+[shrikeh]: https://github.com/shrikeh "My GitHub profile"
+[twitter]: https://twitter.com/barney_hanlon "My Twitter page"
