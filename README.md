@@ -147,6 +147,10 @@ A single live host running a microservice for Single Sign On for Cool Startup. T
 
 Be consistent. The convention above may not be ideal for you, but if you choose to change order of label parts, make sure you do it throughout. Don't have some servers following one naming convention and another following another unless you can guarantee you will never need to look through any sort of list or search containing _both_.
 
+## Automating Naming
+
+I've written an [Ansible role][ansible_semantic_hostname] that makes the process of naming cattle relatively painless. A lot of it should be fire and forget.
+
 ## The Author
 
 The Convention for Semantic Hostnames was created by [shrikeh][shrikeh] after working for years trying to normalise naming of a herd of different servers with different operating systems for different clients, projects, and roles. Tell me what you think of it on [Twitter][twitter].
@@ -168,3 +172,5 @@ The Convention for Semantic Hostnames was created by [shrikeh][shrikeh] after wo
 [shrikeh]: https://github.com/shrikeh "My GitHub profile"
 [twitter]: https://twitter.com/barney_hanlon "My Twitter page"
 [stargazers]: https://github.com/semantic-hostnames/semantic-hostnames/stargazers "Stargazers on GitHub"
+
+[ansible_semantic_hostname]: https://github.com/shrikeh/ansible-semantic-hostname "Semantic hostname role Galaxy"
