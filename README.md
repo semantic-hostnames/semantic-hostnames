@@ -4,7 +4,7 @@
 
 The rules for creating hostnames are covered in [RFC 952][rfc952], [RFC 1123][rfc1123], and further amended in [RFC 2181][rfc2181].
 
-From the [Wikipedia][wikipedia] article:
+From the [Wikipedia][wikipedia_hostname] article:
 
 > Hostnames are human-readable nicknames that correspond to the address of a device connected to a network. They are used by various naming systems, e.g., Network Information Service (NIS), Domain Name System (DNS), Server Message Block (SMB), and the meaning of hostname will vary according to the naming system used. A hostname meaningful to a Microsoft NetBIOS workgroup may be an invalid Internet hostname. When presented with a hostname without any context, it is usually safe to assume that the network is the Internet and the hostname's naming system is the DNS.
  
@@ -18,6 +18,7 @@ In the modern world of [immutable infrastructure][immutable_infrastructure], and
 
 There is also the question of _domain_ itself. Are Cloud servers on [Amazon AWS][aws] your domain? Or [Digital Ocean][digital_ocean]? How many domains resolve to those servers? Do the names of those servers mean anything to you?
 
+
 ## Making Hostnames Have Modern Meaning 
 
 The concept of semantic hostnames inspired by a [blog post][sd_blog] by [Server Density][server_density], although the naming convention in the article again follows the concept of _domain_. Domain names can, and should, be decoupled from hostnames.
@@ -26,6 +27,24 @@ The aim is to have a naming convention that:
 
 - Easily searched. Whether just throwing names in a spreadsheet, grepping logs or files, or full blown Elastisearch, having a convention that exposes useful information about the host is useful.
 - Still useful at the terminal. As most terminals will chop to the first period, it's useful to have meaningful data at the command line.
+
+### Pragmatism at the Terminal
+
+Let's take a couple of "classic" hostnames for a server: firstly, a digital agency running `uat.some-client.myagency.com`, and an in-house team creating a live microservice hosted on `users.mycoolstartup.com`. What do these look like at the terminal when you're trying to fix them?
+
+The digital agency name (assuming using [oh-my-zsh][ohmyzsh] with "bira" theme):
+
+```bash
+╭─root@uat  ~/semantic-hostnames
+╰─$
+```
+The cool startup microservice:
+```bash
+╭─root@users  ~/semantic-hostnames
+╰─$
+```
+
+While the above tell me _something_ about the environment I'm logged into, I would prefer to know more.
 
 ### An example semantic hostname
 
@@ -37,14 +56,15 @@ Breaking this down into components:
 
 What can we tell about the above server just from the name?
 
-Well, assuming the context of, say, a digital agency, this server is for our `Acme` client. If we only do in-house projects, it's our `Acme` project. It's a non-production pipeline server based on the `pipe` flag, and is used for `UAT`. It's primary role is as a Web server using `nginx`, and it's the first server. It also is running CentOS 6 as based on the `cen6` part, hosted by [Rackspace][rackspace]. It's virtual, i.e. not bare metal, based on `vm`, and it is located in their London data centre in the United Kingdom.
+Well, assuming the context of, say, a digital agency, this server is for our `Acme` client. If we only do in-house projects, it's our `Acme` project or microservice. It's a non-production pipeline server based on the `pipe` flag, and is used for `UAT`. It's primary role is as a Web server using `nginx`, and it's the first server. It also is running CentOS 6 as based on the `cen6` part, hosted by [Rackspace][rackspace]. It's virtual, i.e. not bare metal, based on `vm`, and it is located in their London data centre in the United Kingdom.
 
-At the terminal, we'll see (assuming using [oh-my-zsh][ohmyzsh] with "bira" theme):
+At the terminal, we'll see:
 
 ```bash
 ╭─root@acme-pipe-uat-nginx01  ~/semantic-hostnames
 ╰─$
 ```
+Now I know I'm not going to accidentally restart the live production nginx instance, or working on the wrong project.
 
 ## Creating a semantic hostname
 
@@ -55,6 +75,8 @@ A _semantic hostname_ is broken down into two or more labels, separated by perio
 - Optional: Image data (AMI info, etc)
 
 The third label, _Image Data_, is not covered here as it is very specific to individual implementations.
+
+The RFC states the entire name must be no more than 253 octets, and each period-separated label should be no more than 63 octets. Underscores are not allowed.
 
 ### First label: Business Value
 
@@ -93,7 +115,13 @@ _Optional_.  A region-specific slug, i.e. `lon` for London, UK.
 **Required**. The region the device is in. If it's a mobile device, the country of issue. 
 
 
-[wikipedia]: https://en.wikipedia.org/wiki/Hostname "Link to hostnames article on Wikipedia"
+## Semantic hostnames and FQDNs
+
+Semantic hostnames and [Fully Qualified Domain Names (FQDNs)][wikipedia_fqdn] don't have to be mutually exclusive. As previously mentioned, decoupling hostnames from domains is advantageous, but if you wish to make your hostname both _semantic_ and _fully qualified_, then they can both co-exist:
+
+`acme-pipe-uat-nginx01.cen6-rs-vm-lon-uk.somedomain.com`
+
+[wikipedia_hostname]: https://en.wikipedia.org/wiki/Hostname "Article regarding hostnames on Wikipedia"
 [rfc952]: https://www.ietf.org/rfc/rfc952.txt "IETF RFC 952" 
 [rfc1123]: https://www.ietf.org/rfc/rfc1123.txt "IETF RFC 1123"
 [rfc2181]: https://www.ietf.org/rfc/rfc2181.txt "IETF RFC 2181"
@@ -106,3 +134,4 @@ _Optional_.  A region-specific slug, i.e. `lon` for London, UK.
 [rackspace]: http://www.rackspace.com/ "Rackspace home page"
 [aws]: https://aws.amazon.com/ "Amazon AWS homepage"
 [digital_ocean]: https://www.digitalocean.com "Digital Ocean homepage"
+[wikipedia_fqdn]: https://en.wikipedia.org/wiki/Fully_qualified_domain_name "FQDN description on Wikipedia"
