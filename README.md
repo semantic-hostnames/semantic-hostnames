@@ -37,7 +37,7 @@ Breaking this down into components:
 
 What can we tell about the above server just from the name?
 
-Well, assuming the context of, say, a digital agency, this server is for our `Acme` client. If we only do in-house projects, it's our `Acme` project. It's a non-production pipeline server based on the `pipe` flag, and is used for `UAT`. It's primary role is as Web server using `nginx`, and it's the first server. It also is running CentOS 6 as based on the `cen6` part, hosted by [Rackspace][rackspace]. It's virtual, i.e. not bare metal, based on `vm`, and it is located in their London UK data centre.
+Well, assuming the context of, say, a digital agency, this server is for our `Acme` client. If we only do in-house projects, it's our `Acme` project. It's a non-production pipeline server based on the `pipe` flag, and is used for `UAT`. It's primary role is as a Web server using `nginx`, and it's the first server. It also is running CentOS 6 as based on the `cen6` part, hosted by [Rackspace][rackspace]. It's virtual, i.e. not bare metal, based on `vm`, and it is located in their London data centre in the United Kingdom.
 
 At the terminal, we'll see (assuming using [oh-my-zsh][ohmyzsh] with "bira" theme):
 
