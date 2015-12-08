@@ -25,7 +25,7 @@ The concept of semantic hostnames inspired by a [blog post][sd_blog] by [Server 
 
 The aim is to have a naming convention that:
 
-- Easily searched. Whether just throwing names in a spreadsheet, grepping logs or files, or full blown Elastisearch, having a convention that exposes useful information about the host is useful.
+- Easily searched. Whether just throwing names in a spreadsheet, grepping logs or files, or full blown Elastisearch, having a convention that exposes key information about the host from the name alone is useful.
 - Still useful at the terminal. As most terminals will chop to the first period, it's useful to have meaningful data at the command line.
 
 ### Pragmatism at the Terminal
