@@ -86,38 +86,38 @@ The RFC states the entire name must be no more than 253 octets, and each period-
 
 ### First label: Business Value
 
-#####`group`
+##### `group`
 **Required**. This may be a project, a company name, a client, or a domain, though I recommend against the latter. 
 
-#####`tier`
+##### `tier`
 _Optional_. This allows you to have a sweeping boolean between production and your pipeline. You may have many different non-production environments: UAT, QA, OAT, beta, demo and so forth. Rather than create searches on all of these, a flag of `pipeline` or `pipe` can help. If you prefer to skip this, you can use inverse searching with `env != 'prod'` 
 
-#####`environment`
+##### `environment`
 **Required**. The environment itself, for example `prod` for production, `qa`, `uat` and so forth.
 
-#####`role`
+##### `role`
 **Required**. The _role_ of the server in your architecture. If you have multiple roles for the server (i.e. a server with Apache and MySQL running on it), then choose one as primary or use a generic role, i.e. `web`.
 
-#####`increment`
+##### `increment`
 **Required** The increment of the above role. Default is `01`, but if you are into the thousands of servers, feel free to start with higher bounds such as `00001` (although you probably already have your own naming convention by that scale).
 
 
 ### Second label: Infrastructure
 
-#####`os`
+##### `os`
 **Required**. The operating system of the device. You should use the major version release number as the last part of this, i.e. `rhel6` for Red Hat 6, `win10` for Windows, `osx10` for a Macbook, etc.
 
-#####`hosting provider`
+##### `hosting provider`
 **Required**. If you host your own servers, this should be the team name, i.e. `ops`. You need to know who to ring if there's a problem.
 
-#####`device type`
+##### `device type`
 _Optional_, but recommended. Short code for the device: `sp` for smartphone, `vm` or `vrt` for virtual machine, `lb` for load balancer, and so on.
 
 
-#####`locale`
+##### `locale`
 _Optional_.  A region-specific slug, i.e. `lon` for London, UK.
 
-#####`region`
+##### `region`
 **Required**. The region the device is in. If it's a mobile device, the country of issue.
 
 
